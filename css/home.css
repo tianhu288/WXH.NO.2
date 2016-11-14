@@ -1,0 +1,92 @@
+/****************************************************
+*****************************************************
+**********************  header  *********************
+*****************************************************
+*****************************************************/
+
+header section { width: 100%; }
+
+/** 顶部LOGO - header logo **/
+
+header .logo { height: 5rem; padding-bottom: 1rem; background: #25282b; /*border-bottom: 2px solid #111;*/}
+header .link-home { display: inline-block; /* padding: 0 20px; background: #69a8bb;*/}
+header .link-home a { display: inline-block; height: 1.3rem;}
+header .link-home img { width: auto; height: 100%;}
+header #aside-navBtn { position: absolute; margin-top: -.35rem; top: 50%; left: .5rem;}
+
+@media only screen and (max-width: 767px) {
+	header .container { text-align: center;}
+	header .logo { height: 3rem; padding-bottom: 0;}
+	header .link-home { background: transparent;}
+}
+
+/** 顶部登录 - header login **/
+
+header .login { position: relative;}
+header .login .ver-middle:nth-child(2) { position: absolute; right: 0; top: 50%; margin-top: -.75rem; z-index: -1;}
+.topRight-icon-wrap { display: flex; transform-style: preserve-3d;}
+.topRight-icon-wrap > span { flex: 1; width: 1.5rem; height: 1.5rem; margin: 0 10px; line-height: 1.5rem; text-align: center; transition: transform .2s linear; -webkit-transition: transform .2s linear; position: relative; border-radius: 50%; background: #fff;}
+.topRight-icon-wrap [class ^= 'icon'] { font-size: 1rem; color: #00a0d2; cursor: pointer;}
+.share-icon-wrap > span { transform: rotateY(90deg);}
+.topRight-icon-wrap span.trans-first { transform: rotateY(90deg); }
+.topRight-icon-wrap span.trans-second { transition-delay: .2s; -webkit-transition-delay: .2s; transform: rotateY(0deg);}
+.topRight-icon-wrap > span:hover { margin-top: -.1rem; transition: margin-top .1s linear; -webkit-transition: margin-top .1s linear;}
+.login-icon-wrap .icon-search { position: relative; z-index: 1;}
+#input-search { width: 1.5rem; height: 1.5rem; padding: .75rem; position: absolute; right: 0; border-radius: .75rem; border: none; transition: all 1s ease; -webkit-transition: all 1s ease;}
+#input-search.anim-after { width: 10rem;}
+
+/** 顶部导航 - header nav **/
+
+header .nav { margin-top: -1rem;/* border-top: 1px solid #aaa;*/}
+header .nav nav { box-shadow: 0 0 0 .1rem rgba(0,0,0,.4); border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; position: relative; background: -moz-linear-gradient(top, rgba(0,210,255,1), rgba(0,100,150,1)); background: -webkit-linear-gradient(top, rgba(0,210,255,1), rgba(0,100,150,1)); background: -o-linear-gradient(top, rgba(0,210,255,1), rgba(0,100,150,1));}
+header .nav dl { float: left; width: 5.5rem; margin: 0; position: relative;}
+header .nav dl:nth-child(1) { width: 3.5rem;}
+header .nav dt a { display: block; margin: 0 3px; text-align: center; color: #eee; }
+header .nav dt a,header .nav .icon-home { line-height: 2.5rem;}
+header .nav .icon-home { font-size: 1rem;}
+
+/* hover背景效果 */
+.nav-hover-bg { position: absolute; box-sizing: content-box; padding-top: 2px; left: 0; top: -2px; height: 100%; overflow: hidden;}
+#nav-hoveBg-div { content: ""; width: 5.5rem; height: 100%; background: rgba(0,0,0,.05); margin-top: -2px; box-shadow: 0 -1px 5px 1px #444; border-top: 2px solid #e14d43; position: absolute;}
+#nav-hoveBg-div.trans-top { transition: top .3s; -webkit-transition: top .3s;}
+#nav-hoveBg-div.trans-left { transition: left .3s; -webkit-transition: left .3s;}
+
+/* 下拉菜单 */
+header .nav dd { display: none; }
+
+/** 移动端导航菜单 **/
+
+aside#aside-navWrap { position: fixed; width: 100%; height: 100%; top: 0; left: -100%;}
+aside .cover-bg { position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,.5);}
+aside .aside-nav { width: 70%; height: 100%; padding: 1rem; position: relative; background: #25282b; left: 30%; z-index: 1; transition: left .4s; -webkit-transition: left .4s;}
+aside .aside-content { position: relative; height: 100%; width: 100%;}
+
+/* 搜索 */
+aside .search,aside .login { position: absolute; width: 100%;}
+aside .search { height: 2rem; top: 0; text-align: center;}
+aside .search input { height: 1.2rem; line-height: 1.2rem;}
+aside .search .icon-search { }
+
+/* 导航列表 */
+aside nav { position: absolute; width: 100%; top: 2rem; bottom: 3rem; border-width: 1px 0; border-style: solid; border-color: #999; overflow-y: auto;}
+aside nav dl { padding: .5rem; margin: 0;}
+aside nav dl { padding: .5rem; margin: 0;}
+aside nav dl + dl { border-top: 1px dashed #444;}
+aside nav a { color: #eee;}
+
+/* 分享、登录*/
+aside .login { height: 3rem; bottom: 0;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
