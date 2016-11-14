@@ -229,16 +229,21 @@ html { font-size: 20px;}
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-touch-callout: none;}
 body { font-family: "Helvetica Neue",Helvetica,sans-serif; font-size: .7rem; line-height: 1.5; color: #444; background: #fff; overflow: hidden;}
 
+input { border: none; outline: none;}
+
+dd { margin-left: 1.4rem;}
+
+ul { list-style: none;}
 
 /** 图标字体自定义 **/
 
 @font-face {
   font-family: 'iconfont';  /* project id："177866" */
-  src: url('//at.alicdn.com/t/font_e4uipvgzuxklc8fr.eot');
-  src: url('//at.alicdn.com/t/font_e4uipvgzuxklc8fr.eot') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_e4uipvgzuxklc8fr.woff') format('woff'),
-  url('//at.alicdn.com/t/font_e4uipvgzuxklc8fr.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_e4uipvgzuxklc8fr.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_dzr78aldnvfs9k9.eot');
+  src: url('//at.alicdn.com/t/font_dzr78aldnvfs9k9.eot') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_dzr78aldnvfs9k9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_dzr78aldnvfs9k9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_dzr78aldnvfs9k9.svg#iconfont') format('svg');
 }
 [class ^= "icon"] {
 	display: inline-block; font-family: "iconfont" !important; font-style: normal; font-size: .7rem; color: #eee; vertical-align: top;
