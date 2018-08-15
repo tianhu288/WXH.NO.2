@@ -1,0 +1,49 @@
+/**
+ * Theme Name: NO.2
+ * Theme URI: http://www.wuxiaohu.com
+ * Description: 个人辛勤劳动
+ * Version: 2.0
+ * Author: tianhu288
+ * Author URI: http://www.wuxiaohu.com
+ */
+
+/*
+                        WordPress 4.9版本：
+                        
+			导航下拉设置：
+
+			源文件： wp-includes/class-walker-nav-menu.php 在这个文件改二级菜单样式  
+			
+			$output .= "{$n}{$indent}<ul$class_names>{$n}";
+			修改为：
+			$output .= "{$n}{$indent}<div$class_names><ul>{$n}";
+			
+			$output .= "$indent</ul>{$n}";
+			改为
+			$output .= "$indent</ul></div>{$n}";
+*/
+/*
+                        WordPress 4.9版本：
+
+			转载设置：
+	
+			格式：
+			编辑“栏目”：copyright
+			
+			直接填写转载链接地址即可
+*/
+/*
+                        WordPress 4.9版本：
+
+			内嵌音频设置：
+	
+			格式：
+			编辑“栏目”：audiosrc
+			
+			歌曲名 , 歌手 , 图片地址 , 音频地址 , 访问地址
+
+			间隔为	“ , ”
+				“空格 + 逗号 + 空格” 
+*/
+
+

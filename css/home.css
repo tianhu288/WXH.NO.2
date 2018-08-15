@@ -1,111 +1,69 @@
-/****************************************************
-*****************************************************
-**********************  header  *********************
-*****************************************************
-*****************************************************/
+/* 
+	文件名：home.css
+	文件描述：首页样式
+			（大图轮播样式）
+	创建时间：2016.11.08
+	更新时间：2017.05.09
+	创建者：小虎（www.wuxiaohu.com）
+*/
 
-header section { width: 100%; }
+/*************************************************************************
+2017.05.09: 响应显示/隐藏，从之前的JS判断改为CSS响应
+2016.11.20: 首页基本完成
+2016.11.17: 更新注释
+*************************************************************************/
 
-/** 顶部LOGO - header logo **/
 
-header .logo { height: 5rem; padding-bottom: 1rem; background: #25282b; /*border-bottom: 2px solid #111;*/}
-header .link-home { display: inline-block; /* padding: 0 20px; background: #69a8bb;*/}
-header .link-home a { display: inline-block; height: 1.3rem;}
-header .link-home img { width: auto; height: 100%;}
-header #aside-navBtn { position: absolute; margin-top: -.35rem; top: 50%; left: .5rem;}
+/***** PC端 大图导航 *****/
 
-@media only screen and (max-width: 767px) {
-	header .container { text-align: center;}
-	header .logo { height: 3rem; padding-bottom: 0;}
-	header .link-home { background: transparent;}
+.album-indexUl li,.album-indexUl li a,.album-indexUl li img,.album-btnWrap,.album-btnWrap > div { height: 100%;}
+#album-index { height: 0; width: 100%; position: relative; overflow: hidden; display: none; -webkit-transition: height .5s linear; transition: height .5s linear;}
+.album-indexUl { width: 1000rem; height: 500px; margin-top: 0; margin-bottom: 0; margin-left: 50%; padding-left: 0; position: absolute;}
+.album-indexUl li { float: left;}
+.album-indexUl li a { display: block; position: relative;}
+.album-indexUl li a::before { content: ""; display: block; position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,.3); cursor: pointer;}
+.album-indexUl li.active a::before,.album-indexUl li:hover a::before { animation: aBGtran .5s; -webkit-animation: aBGtran .5s; background: rgba(0,0,0,0);}
+.album-indexUl li img { width: auto;}
+
+@keyframes aBGtran{
+	from { background: rgba(0,0,0,.3) }
+	to { background: rgba(0,0,0,0)}
+}
+@-webkit-keyframes aBGtran{
+	from { background: rgba(0,0,0,.3) }
+	to { background: rgba(0,0,0,0)}
 }
 
-/** 顶部登录 - header login **/
+@media screen and (min-width: 768px) {
+	#album-index{display: block;}
+}
 
-header .login { position: relative;}
-header .login .ver-middle:nth-child(2) { position: absolute; right: 0; top: 50%; margin-top: -.75rem; z-index: -1;}
-.topRight-icon-wrap { display: flex; transform-style: preserve-3d;}
-.topRight-icon-wrap > span,.topRight-icon-wrap > span > [class ^= 'icon'] { width: 1.5rem; height: 1.5rem; line-height: 1.6rem;}
-.topRight-icon-wrap > span { flex: 1; margin: 0 10px; text-align: center; -webkit-transition: transform .2s linear; position: relative; transition: transform .2s linear; border-radius: 50%; background: #fff;}
-.topRight-icon-wrap [class ^= 'icon'] { font-size: 1rem; color: #00a0d2; cursor: pointer;}
-.share-icon-wrap > span { transform: rotateY(90deg);}
-.topRight-icon-wrap span.trans-first { transform: rotateY(90deg); }
-.topRight-icon-wrap span.trans-second { -webkit-transition-delay: .2s; transition-delay: .2s; transform: rotateY(0deg);}
-.topRight-icon-wrap > span:hover { margin-top: -.1rem; -webkit-transition: margin-top .1s linear; transition: margin-top .1s linear;}
-.login-icon-wrap .icon-search { position: relative; z-index: 1;}
-#input-search { width: 1.5rem; height: 1.5rem; padding: .75rem; position: absolute; right: 0; border-radius: .75rem; border: none; -webkit-transition: all 1s ease; transition: all 1s ease;}
-#input-search.anim-after { width: 10rem;}
+/* 导航按钮 */
+.album-btnWrap { width: 100%; position: absolute; top: -100%;}
+.album-btnWrap > div { width: 100px; text-align: center; color: #fff; cursor: pointer; position: absolute; top: 100%;}
+.album-btnWrap .album-btn-prev { left: 0;}
+.album-btnWrap .album-btn-next { right: 0;}
+.album-btnWrap .album-btn-prev:hover { background: -ms-linear-gradient(left, rgba(0,0,0,.9), rgba(0,0,0,0)); background: -webkit-linear-gradient(left, rgba(0,0,0,.9), rgba(0,0,0,0)); background: linear-gradient(left, rgba(0,0,0,.9), rgba(0,0,0,0));}
+.album-btnWrap .album-btn-next:hover { background: -ms-linear-gradient(right, rgba(0,0,0,.9), rgba(0,0,0,0)); background: -webkit-linear-gradient(right, rgba(0,0,0,.9), rgba(0,0,0,0)); background: linear-gradient(right, rgba(0,0,0,.9), rgba(0,0,0,0));}
+.album-btnWrap > div > span { font-size: 1.8rem; color: #ddd;}
+.album-btnWrap > div:hover > span { color: #999;}
 
-/** 顶部导航 - header nav **/
-
-header .nav { margin-top: -1rem; position: fixed; /* border-top: 1px solid #aaa;*/}
-header .nav nav { box-shadow: 0 0 0 .1rem rgba(0,0,0,.4); border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; position: relative; background: -webkit-linear-gradient(top, rgba(0,210,255,1), rgba(0,100,150,1)); background: linear-gradient(top, rgba(0,210,255,1), rgba(0,100,150,1));}
-header .nav dl { float: left; width: 5.5rem; margin: 0; position: relative;}
-header .nav dl:nth-child(1) { width: 3.5rem;}
-header .nav dt a { display: block; margin: 0 3px; text-align: center; color: #eee; }
-header .nav dt a,header .nav .icon-home { line-height: 2.5rem;}
-header .nav .icon-home { font-size: 1rem;}
-
-/* hover背景效果 */
-.nav-hover-bg { position: absolute; box-sizing: content-box; padding-top: 2px; left: 0; top: -2px; height: 100%; overflow: hidden;}
-#nav-hoveBg-div { content: ""; width: 5.5rem; height: 100%; background: rgba(0,0,0,.05); margin-top: -2px; box-shadow: 0 -1px 5px 1px #444; border-top: 2px solid #e14d43; position: absolute;}
-#nav-hoveBg-div.trans-top { -webkit-transition: top .3s; transition: top .3s;}
-#nav-hoveBg-div.trans-left { -webkit-transition: left .3s; transition: left .3s;}
-
-/* 下拉菜单 */
-header .nav dd { position: absolute;  margin: 0; width: 100%; text-align: center}
-header .nav dd ul { padding: .5rem 0; margin: 0; background: -webkit-linear-gradient(top,rgba(0,100,150,.3),rgba(0,0,0,0));}
-header .nav dd a { display: block; padding: .2rem; color: #777;}
-
-/** 移动端导航菜单 **/
-
-aside#aside-navWrap { position: fixed; width: 100%; height: 100%; top: 0; left: -100%;}
-aside .cover-bg { position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,.5);}
-aside .aside-nav { width: 70%; height: 100%; padding: 1rem; position: relative; background: #25282b; left: 30%; z-index: 1; -webkit-transition: left .4s; transition: left .4s;}
-aside .aside-content { position: relative; height: 100%; width: 100%;}
-
-/* 搜索 */
-aside .search,aside .login { position: absolute; width: 100%;}
-aside .search { height: 3rem; top: 0; padding: 0 .5rem; text-align: center;}
-aside .search > div.ver-middle { position: relative; width: 100%;}
-aside .search input,aside .search .icon-search { line-height: 1.3rem;}
-aside .search input { width: 100%; height: 1.3rem; padding: .1rem .4rem .1rem 1.2rem; border-radius: .2rem;}
-aside .search .icon-search { width: 1.2rem; color: #ccc; position: absolute; left: 0; top: .05rem;}
-
-/* 导航列表 */
-aside nav { position: absolute; width: 100%; top: 3rem; bottom: 2.5rem; border-width: 1px 0; border-style: solid; border-color: #888; overflow-y: auto;}
-aside nav::before { content: ""; display: block; width: 100%;}
-aside nav::after { content: ""; display: block; width: 100%;}
-aside nav dl { padding: .5rem; margin: 0;}
-aside nav dl + dl { border-top: 1px solid #393939;}
-aside nav dd + dd { border-top: 1px dashed #393939;}
-aside nav a { display: block; color: #eee;}
-aside nav dt a { padding-bottom: 0;}
-aside nav dd a { padding: .4rem;}
-aside nav a .icon-home { margin-right: .2rem;}
-
-/* 分享、登录*/
-aside .login { display: flex; padding: .5rem 0; height: 2.5rem; bottom: 0;}
-aside .login > span { flex: 1; text-align: center;}
-aside .login > span:nth-child(1) { border-right: 1px solid #111;}
-aside .login > span:nth-child(2) { border-left: 1px solid #444;}
-aside .login > span > a { font-size: 1rem;}
+/*小图标导航*/
+.album-ctrWrap { display: -webkit-flex; display: flex; -webkit-justify-content: center; justify-content: center; position: absolute; width: 100%; height: 0; bottom: -1.25rem; -webkit-transition: bottom .5s linear .5s; transition: bottom .5s linear .5s;}
+.album-ctrWrap > a { width: .5rem; height: .5rem; -webkit-flex-basis: .5rem; flex-basis: .5rem; display: block; margin: 0 .15rem; border-radius: 50%; background: rgba(255,255,255,.7); border: 1px solid rgba(225,77,67,.1); cursor: pointer;}
+.album-ctrWrap > a.active { background: rgba(0,100,150,.9);}
 
 
-/** PC端 大图导航 **/
+/***** 关于我 *****/
 
-#pic-wrap {}
-#pic-wrap img { display: none;}
-#pic-wrap img { display: block;}
+/***** 活动列表 *****/
 
+#artLists-index { padding-top: 1rem; padding-bottom: 2rem;}
 
+/***** 联系我 *****/
 
-
-
-
-
-
-
+#contact-index { padding: 1.5rem 0 3rem; background: #006496; color: #fff;}
+#contact-index h3 { margin-bottom: 0;}
 
 
 

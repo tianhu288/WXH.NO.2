@@ -1,0 +1,98 @@
+/* 
+	文件名：pages.css
+	文件描述：‘页面’ 所有样式
+	创建时间：2016.11.29
+	更新时间：2016.11.29
+	创建者：小虎（www.wuxiaohu.com）
+*/
+
+/*************************************************************************
+2016.12.01: 时间归档页面
+2016.11.29: 新建文件
+*************************************************************************/
+
+/***** 归档页面 *****/
+
+/*标题*/
+.title-outer { padding-top: 1.2rem;}
+
+@media only screen and (max-width: 767px) {
+	.title-outer { padding-top: 3.2rem;}
+	.month-list-ul { padding-left: 0;}
+}
+
+/*外层点击*/
+.cont-page { color: #666; position: relative;}
+#all-change { margin-bottom: 1rem;}
+#all-change a { font-size: 95%; margin-bottom: 1rem; color: #00a0d2;}
+
+/*主盒子*/
+.page-list-wrap { margin: 0;}
+.page-list-wrap:last-child { padding-bottom: 3rem;}
+.page-list-wrap h4,.page-list-wrap ul { margin-top: 0; margin-bottom: 0;}
+.page-list-wrap [class ^= "icon"] { width: .75rem; margin-right: .15rem;}
+
+/*年标题*/
+.year-title { line-height: 1.5rem; position: relative;}
+.year-title small { font-size: 70%;}
+.year-title small a,.month-title small a { color: #00a0d2;}
+.year-title .icon-listCtr { position: absolute; height: .75rem; line-height: .75rem; font-size: .5rem; color: #e14d43; background: #fff; left: .15rem; top: 2rem; cursor: pointer; z-index: -1; opacity: 0;}
+.year-title .icon-listCtr.active { z-index: 1; opacity: 1;}
+
+/*年列表*/
+.year-list-ul { padding-left: 1.5rem; margin-left: .375rem; border-left: 1px dashed #ccc; overflow: hidden; -webkit-transition: .3s linear; transition: .3s linear;}
+.year-list-ul > li { position: relative;}
+.year-list-ul > li { position: relative;}
+.year-list-ul > li::before { content: ""; position: absolute; width: 1rem; height: 0; left: -1.25rem; top: 0.75rem; border-bottom: 1px dashed #ccc;}
+
+/*月标题*/
+.month-title { line-height: 1.5rem;}
+
+/*月列表*/
+.month-list-ul { padding-left: .9rem;}
+.month-list-li { line-height: 1rem; color: #999;}
+.page-list-wrap .icon-discuss { width: .5rem; position: relative; top: .1rem; font-size: .5rem;}
+.month-list-li > a {}
+.month-list-li small a { color: #00a0d2;}
+.page-list-wrap a:hover,#all-change a:hover { color: #e14d43;}
+
+
+
+/***** 标签归档 *****/
+.page-tags-cloud { margin: 0 auto 2rem; -webkit-transform-style: preserve-3d; transform-style: preserve-3d; position: relative;}
+.page-tags-cloud a { display: block; height: 1rem; line-height: 1rem; white-space: nowrap; position: absolute; left: 50%; top: 50%;}
+.icon-refresh { font-size: .625rem; color: #00a0d2; cursor: pointer;}
+.icon-refresh.active { color: #e14d43; -webkit-transition: transform .5s; transition: transform .5s; -webkit-transform: rotate(-90deg); transform: rotate(-90deg);}
+
+
+/***** 传送门 *****/
+
+.list-header { font-size: .55rem; color: #555; border-bottom: 1px dashed #f1f1f1;}
+.icon-listHeader { font-size: .65rem;}
+
+.transfer-list,.transfer-list > li,.transfer-other ul { width: 100%; display: -webkit-flex; display: flex; -webkit-flex-wrap: wrap; flex-wrap: wrap; -webkit-justify-content: space-around; justify-content: space-around; padding: 0;}
+.transfer-list > li,.transfer-other li { margin-bottom: .75rem; -webkit-flex: 0 0 32%; flex: 0 0 32%; border-radius: 5px; background: #f1f1f1; cursor: pointer;}
+.transfer-list > li:hover,.transfer-other li:hover { background: #f7f7f7;}
+.transfer-list > li:hover .transfer-infoWrap h5 { color: #e14d43;}
+
+.transfer-imgWrap,.transfer-infoWrap { height: 3.5rem;}
+.transfer-imgWrap { -webkit-flex: 0 0 3.5rem; flex: 0 0 3.5rem; text-align: center; padding: 16px;}
+.transfer-imgWrap img { max-width: 80px; max-height: 80px; width: 100%; height: 100%; border-radius: 5px; background: #fff;}
+
+.transfer-infoWrap { -webkit-flex: 1 1 calc(100% - 3.5rem); flex: 1 1 calc(100% - 3.5rem); max-width: calc(100% - 3.5rem); padding: 16px 16px 16px 0px;}
+.transfer-infoWrap h5,.transfer-infoWrap p { margin: 0;}
+.transfer-infoWrap h5 { color: #00a0d2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.transfer-infoWrap p { max-height: 1.5rem; line-height: .5rem; font-size: 80%; color: #777; overflow: hidden;}
+
+@media only screen and (max-width: 767px) {
+	.transfer-list > li,,.transfer-other li { -webkit-flex: 0 0 45%; flex: 0 0 48%;}
+	.transfer-imgWrap,.transfer-infoWrap { height: auto;}
+	.transfer-imgWrap { -webkit-flex-basis: 100%; flex-basis: 100%; padding: 16px 0;}
+	.transfer-imgWrap img { width: auto; height: auto;}
+	.transfer-infoWrap { display: none;}
+}
+
+.transfer-other ul { padding: 0;}
+.transfer-other li { padding: 10px 15px;}
+.transfer-other a { display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; color: #777;}
+.transfer-other li:hover a { color: #e14d43;}
